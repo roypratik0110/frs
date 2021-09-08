@@ -1,7 +1,7 @@
 package FRS;
 
 public class RegularTicket {
-    public String specialService;
+    private String specialService;
 
     public RegularTicket(String specialService) {
         this.specialService = specialService;
@@ -13,5 +13,9 @@ public class RegularTicket {
         } else {
             return "Select valid Special Service";
         }
+    }
+
+    public void setSpecialService(String specialService) {
+        this.specialService = specialService;
     }
 }

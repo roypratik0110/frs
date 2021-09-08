@@ -1,16 +1,19 @@
 package FRS;
 
 public class Flight {
-    public String flightNumber;
-    public String airline;
-    public int capacity;
-    public int bookedSeats;
+    private String flightNumber;
+    private String  airline;
+    private int capacity;
+    private static int bookedSeats;
 
-    public Flight(String flightNumber, String airline, int capacity, int bookedSeats) {
+    public Flight(String flightNumber, String airline, int capacity) {
         this.flightNumber = flightNumber;
         this.airline = airline;
         this.capacity = capacity;
-        this.bookedSeats = bookedSeats;
+    }
+
+    static{
+        bookedSeats=0;
     }
 
     public String getFlightDetails(){
@@ -26,4 +29,19 @@ public class Flight {
         }
     }
 
+    public String getFlightNumber() {
+        return flightNumber;
+    }
+
+    public String getAirline() {
+        return airline;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public static int bookedSeatCounter(){
+        return bookedSeats++;
+    }
 }
