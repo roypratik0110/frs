@@ -1,6 +1,6 @@
 package FRS;
 
-public class Ticket {
+public abstract class Ticket {
     private String pnr;
     private String from;
     private String to;
@@ -29,6 +29,7 @@ public class Ticket {
         this.cancelled = cancelled;
     }
 
+
     public String checkStatus(){
        if (cancelled==false) {
            return "Confirmed";
@@ -38,15 +39,14 @@ public class Ticket {
        }
     }
 
-    String[] dt = this.departureTime.split(":");
-            String dt1 = dt[0];
-            String dt2 = dt[1];
-
-    String[] at = this.arrivalTime.split(":");
-            String at1 = at[0];
-            String at2 = at[1];
-
     public String getFlightDuration () {
+        String[] dt = departureTime.split(":");
+        String dt1 = dt[0];
+        String dt2 = dt[1];
+
+        String[] at = arrivalTime.split(":");
+        String at1 = at[0];
+        String at2 = at[1];
         int dTime1 = Integer.parseInt(dt1);
         int dTime2 = Integer.parseInt(dt2);
         int aTime1 = Integer.parseInt(at1);
@@ -129,7 +129,9 @@ public class Ticket {
     }
 
     public void setCancelled(boolean cancelled) {
-
         this.cancelled = cancelled;
+    }
+
+    public static void printTicketDetails(String pnr) {
     }
 }
