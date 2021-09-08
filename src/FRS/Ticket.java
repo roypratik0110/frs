@@ -31,7 +31,7 @@ public abstract class Ticket {
 
 
     public String checkStatus(){
-       if (cancelled==false) {
+       if (!cancelled) {
            return "Confirmed";
        }
        else {
@@ -132,6 +132,4 @@ public abstract class Ticket {
         this.cancelled = cancelled;
     }
 
-    public static void printTicketDetails(String pnr) {
-    }
 }
